@@ -3,9 +3,11 @@
 <head>
     <title><%- theme?.title; %></title>
     <meta charset="utf-8">
+    <%- js("lib/dayjs-1.11.11.min.js"); %>
     <%- css("css/base.css"); %>
     <%- css("css/layout.css"); %>
     <%- css("css/aside.css"); %>
+    <%- css("css/posts.css"); %>
     <%- css("lib/font-awesome-4.7.0/css/font-awesome.min.css"); %>
 </head>
 <body>
@@ -18,7 +20,7 @@
 
     <!-- 引入正文 -->
     <div id="content">
-        hello, world.
+        <%- include('posts.ejs') %>
     </div>
 
 </div>
