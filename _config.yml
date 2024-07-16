@@ -11,6 +11,6 @@ avatar:
 
 site-state: true
 
-#social:
-#  GitHub: https://github.com/w4ngzhen || fa-github
-#  RSS: /atom.xml || fa fa-rss
+social:
+  GitHub: https://github.com/w4ngzhen || fa fa-github
+  RSS: /atom.xml || fa fa-rss

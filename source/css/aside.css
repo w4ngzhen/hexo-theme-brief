@@ -108,14 +108,16 @@
     }
 
     .social {
-        display: grid;
-        /*justify-content: space-around;*/
-        /*align-items: center;*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 5px 0;
         font-size: 12px;
-        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr) );
 
         .social-item {
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
 
             .icon {
 
