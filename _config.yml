@@ -5,3 +5,12 @@ menus:
   archives: /archives/ || fa fa-archive
 menus-config:
   enable-icon: true
+
+avatar:
+  url: /images/tiger400.jpg
+
+site-state: true
+
+#social:
+#  GitHub: https://github.com/w4ngzhen || fa-github
+#  RSS: /atom.xml || fa fa-rss

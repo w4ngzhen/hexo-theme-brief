@@ -26,7 +26,8 @@
 .menus {
     margin: 0;
     list-style-type: none;
-    padding: 0;
+    padding: 10px 0;
+    background: white;
 
     .menu-item {
         color: #555;
@@ -45,8 +46,6 @@
         a {
             display: inline-block;
             width: 100%;
-            text-decoration: none;
-            color: unset;
         }
 
         &:hover {
@@ -61,5 +60,70 @@
 }
 
 .author-overview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    margin-top: 10px;
+    padding: 20px 0;
 
+    .avatar {
+        width: 126px;
+        height: 126px;
+    }
+
+    .author-name {
+        margin: 10px 0 0 0;
+        font-size: 12px;
+        font-weight: bold;
+        color: #555;
+    }
+
+    .site-state {
+        margin: 10px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .state-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 12px;
+
+            .count {
+                font-weight: 500;
+                color: #222;
+            }
+
+            .name {
+                color: #333;
+                margin: 0;
+            }
+
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .social {
+        display: grid;
+        /*justify-content: space-around;*/
+        /*align-items: center;*/
+        padding: 5px 0;
+        font-size: 12px;
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr) );
+
+        .social-item {
+
+            .icon {
+
+            }
+
+            .name {
+
+            }
+        }
+    }
 }
