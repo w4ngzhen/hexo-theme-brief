@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh, en">
+<head>
+    <title><%- theme?.title; %></title>
+    <meta charset="utf-8">
+    <%- css("css/base.css"); %>
+    <%- css("css/layout.css"); %>
+    <%- css("css/aside.css"); %>
+    <%- css("lib/font-awesome-4.7.0/css/font-awesome.min.css"); %>
+</head>
+<body>
+
+<div id="main">
+    <!-- 引入侧边栏 -->
+    <aside id="aside">
+        <%- include('aside.ejs') %>
+    </aside>
+
+    <!-- 引入正文 -->
+    <div id="content">
+        hello, world.
+    </div>
+
+</div>
+<%- js("js/path-change.js"); %>
+</body>
+</html>

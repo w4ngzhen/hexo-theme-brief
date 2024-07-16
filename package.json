@@ -1,0 +1,15 @@
+{
+  "name": "hexo-theme-brief",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "w4ngzhen <w4ngzhen@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-stylus": "^3.0.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "prettier-plugin-ejs": "^1.0.3"
+  }
+}

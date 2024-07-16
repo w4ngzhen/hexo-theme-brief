@@ -1,0 +1,7 @@
+menus:
+  home: / || fa fa-home
+  about: /about/ || fa fa-user
+  tags: /tags/ || fa fa-tags
+  archives: /archives/ || fa fa-archive
+menus-config:
+  enable-icon: true

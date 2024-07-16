@@ -1,0 +1,12 @@
+#main {
+    display: flex;
+}
+
+#aside {
+    width: 240px;
+    padding: 0 10px;
+}
+
+#content {
+    flex: 1 auto;
+}

@@ -1,0 +1,28 @@
+<div style="width: 100%; height: 100%">
+    <div class="brand">
+        <h1 class="title"><%= config.title; %></h1>
+        <p class="subtitle"><%= config.subtitle; %></p>
+    </div>
+    <ul class="menus">
+        <% for ( menu in theme.menus ) { %>
+            <%
+                const menuInfo = theme.menus[menu];
+                let [menuPath, icon] = menuInfo.split("||");
+                menuPath = menuPath?.trim();
+                icon = icon?.trim();
+            %>
+            <li class="menu-item" data-path="<%- menuPath %>">
+                <% if(theme['menus-config']['enable-icon'] && icon) { %>
+                    <i class="<%- icon %>"></i>
+                <% } %>
+                <a href="<%- menuPath %>"><%- menu %></a>
+            </li>
+        <% } %>
+    </ul>
+    <div class="author-overview">
+
+    </div>
+</div>
+<script>
+
+</script>
