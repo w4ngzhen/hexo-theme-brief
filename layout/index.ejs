@@ -1,0 +1,14 @@
+<div class="post-list-wrapper">
+    <ul class="post-list">
+        <% site.posts.data.sort((p1, p2) => p2.date - p1.date).forEach(post => { %>
+            <li class="post-item">
+                <p class="date">
+                    <%- date(post.date, "YYYY年MM月DD日"); %>
+                </p>
+                <a class="title" href="<%- url_for(post.path); %>">
+                    <%- post.title; %>
+                </a>
+            </li>
+        <% }); %>
+    </ul>
+</div>

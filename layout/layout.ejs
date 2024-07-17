@@ -3,24 +3,36 @@
 <head>
     <title><%- theme?.title; %></title>
     <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+          name="viewport">
     <%- js("lib/dayjs-1.11.11.min.js"); %>
     <%- css("css/base.css"); %>
     <%- css("css/layout.css"); %>
     <%- css("css/aside.css"); %>
-    <%- css("css/posts.css"); %>
+    <%- css("css/post-list.css"); %>
+    <%- css("css/post.css"); %>
     <%- css("lib/font-awesome-4.7.0/css/font-awesome.min.css"); %>
 </head>
 <body>
 
 <div id="main">
     <!-- 引入侧边栏 -->
-    <aside id="aside">
+    <aside id="aside-container">
         <%- include('aside.ejs') %>
     </aside>
+    <!-- 顶部导航 -->
+    <nav id="nav-container">
+        <%- include('nav.ejs') %>
+    </nav>
+    <!-- 上述两个部分，会根据媒体查询进行隐藏，小屏幕使用顶部 -->
 
-    <!-- 引入正文 -->
-    <div id="content">
-        <%- include('posts.ejs') %>
+    <!-- 内容区域 -->
+    <div id="content-container">
+        <!--
+        该区域内容，hexo内部会根据具体的路径找对应的模板
+        例如，首页就是用index.ejs，文章路径就使用post.ejs
+         -->
+        <%- body; %>
     </div>
 
 </div>

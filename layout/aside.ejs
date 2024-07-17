@@ -1,4 +1,4 @@
-<div style="width: 100%; height: 100%">
+<div class="aside-content">
     <div class="brand">
         <h1 class="title"><%= config.title; %></h1>
         <p class="subtitle"><%= config.subtitle; %></p>
@@ -13,7 +13,7 @@
                 <% if(theme['menus-config']['enable-icon'] && icon) { %>
                     <i class="<%- icon %>"></i>
                 <% } %>
-                <a href="<%- menuPath %>"><%- menu %></a>
+                <a href="<%- url_for(menuPath) %>"><%- menu %></a>
             </li>
         <% } %>
     </ul>
@@ -43,7 +43,7 @@
                 %>
                 <div class="social-item">
                     <i class="icon <%- icon %>"></i>
-                    <a class="name" href="<%- url %>"><%- item %></a>
+                    <a class="name" href="<%- url_for(url) %>"><%- item %></a>
                 </div>
                 <% } %>
             </div>

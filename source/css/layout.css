@@ -2,14 +2,27 @@
     display: flex;
     width: 100%;
     height: 100%;
+
+    #aside-container {
+        /* 宽度小于等于600px，不显示侧边 */
+        @media only screen and (max-width: 600px) {
+            display: none;
+        }
+        width: 240px;
+        padding: 0 10px;
+    }
+
+    #nav-container {
+        /* 宽度小于等于600px，显示顶部nav */
+        @media only screen and (max-width: 600px) {
+            display: block;
+        }
+    }
+
+    #content-container {
+        flex: 1;
+        background: white;
+        overflow-y: auto;
+    }
 }
 
-#aside {
-    width: 240px;
-    padding: 0 10px;
-}
-
-#content {
-    flex: 1 auto;
-    background: white;
-}
