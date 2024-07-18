@@ -1,12 +1,12 @@
-/* #################### 文章 #################### */
-/* 文章各个元素间隔 */
+/* 文章内容部分（主要是文字） */
 #article {
     width: 100%;
-    padding: 10px
+    padding: 20px 20px 40px 20px;
+    line-height: 24px;
 }
 
-#article * {
-    margin: 30px 0;
+#article ul {
+    list-style-type: unset;
 }
 
 #article h1,
@@ -19,22 +19,21 @@
     margin: 20px 0 15px;
 }
 
-
 #article h1 {
-    font-size: 32px;
+    font-size: 25px;
     font-weight: 900;
     padding-bottom: 10px;
     border-bottom: 2px solid #e06c75;
 }
 
 #article h2 {
-    font-size: 25px;
+    font-size: 20px;
     border-left: 3px solid #73b1e0;
     padding-left: 10px;
 }
 
 #article h3 {
-    font-size: 22px
+    font-size: 18px
 }
 
 #article a {
@@ -50,75 +49,205 @@
     border-bottom: none;
 }
 
-#article code {
-    border-radius: 3px;
-    box-shadow: 0px 0px 5px #999;
-}
-
-#article img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0px 0px 8px #999;
-}
-
-#article pre {
-    font-size: 14px;
-    margin: 20px 0 15px;
-}
-
 #article p {
+    margin: 0 0 20px;
+}
+
+/* 文章引用部分 */
+#article blockquote {
+    border-left: 4px solid #ddd;
+    color: #666;
     margin: 0 0 10px;
-    line-height: 30px
+    padding: 0 15px;
 }
 
-/* 表格处理 */
-#article table {
+#article blockquote cite::before {
+    content: '-';
+    padding: 0 5px;
+}
+
+#article .blockquote-center {
+    border-left: 0;
+    margin: 40px 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+}
+
+#article .blockquote-center::before,
+#article .blockquote-center::after {
+    left: 0;
+    line-height: 1;
+    opacity: 0.6;
+    position: absolute;
     width: 100%;
-    border: 0;
-    margin: 20px 0 50px 0;
-    border-collapse: collapse;
-    border-spacing: 0;
-    line-height: 35px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 5px #999;
 }
 
-#article table th {
-    background: #73b1e0;
-    font-weight: 800;
-    font-size: 18px;
+#article .blockquote-center::before {
+    border-top: 1px solid #ccc;
     text-align: left;
-    line-height: 35px;
-    color: #FFF;
+    top: -20px;
+    content: '\f10d';
+    font-family: 'Font Awesome 6 Free', serif;
+    font-weight: 900;
 }
 
-#article table tr:nth-child(odd) {
-    background: #F4F4F4;
+#article .blockquote-center::after {
+    border-bottom: 1px solid #ccc;
+    bottom: -20px;
+    text-align: right;
+    content: '\f10e';
+    font-family: 'Font Awesome 6 Free', serif;
+    font-weight: 900;
 }
 
-#article table tr:hover,
-#article table td:hover {
-    background: #badbf5;
-    color: #FFF;
+#article .blockquote-center p,
+#article .blockquote-center div {
+    text-align: center;
 }
 
-#article table td, table th {
-    padding: 5px 20px 5px 20px
+/* img */
+#article img {
+    display: block;
+    max-width: 80%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 0 0 8px #999;
+    @media only screen and (max-width: 600px) {
+        max-width: 100%;
+    }
 }
 
-#article table tr:first-child th:first-child {
-    border-top-left-radius: 3px;
+/* 代码部分 */
+/* - 显示行号后，hexo对代码块wrap的figure */
+/* - 代码高亮主题 */
+/*!
+  Theme: Default
+  Description: Original highlight.js style
+  Author: (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
+  Maintainer: @highlightjs/core-team
+  Website: https://highlightjs.org/
+  License: see project LICENSE
+  Touched: 2021
+*/
+pre code.hljs {
+    display: block;
+    overflow-x: auto;
 }
 
-#article table tr:first-child th:last-child {
-    border-top-right-radius: 3px;
+code.hljs {
+    padding: 3px 5px
 }
 
-#article table tr:last-child td:first-child {
-    border-bottom-left-radius: 3px;
+.hljs {
+    background: #f3f3f3;
+    color: #444
 }
 
-#article table tr:last-child td:last-child {
-    border-bottom-right-radius: 3px;
+.hljs-comment {
+    color: #697070
+}
+
+.hljs-punctuation, .hljs-tag {
+    color: #444a
+}
+
+.hljs-tag .hljs-attr, .hljs-tag .hljs-name {
+    color: #444
+}
+
+.hljs-attribute, .hljs-doctag, .hljs-keyword, .hljs-meta .hljs-keyword, .hljs-name, .hljs-selector-tag {
+    font-weight: 700
+}
+
+.hljs-deletion, .hljs-number, .hljs-quote, .hljs-selector-class, .hljs-selector-id, .hljs-string, .hljs-template-tag, .hljs-type {
+    color: #800
+}
+
+.hljs-section, .hljs-title {
+    color: #800;
+    font-weight: 700
+}
+
+.hljs-link, .hljs-operator, .hljs-regexp, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-symbol, .hljs-template-variable, .hljs-variable {
+    color: #ab5656
+}
+
+.hljs-literal {
+    color: #695
+}
+
+.hljs-addition, .hljs-built_in, .hljs-bullet, .hljs-code {
+    color: #397300
+}
+
+.hljs-meta {
+    color: #1f7199
+}
+
+.hljs-meta .hljs-string {
+    color: #38a
+}
+
+.hljs-emphasis {
+    font-style: italic
+}
+
+.hljs-strong {
+    font-weight: 700
+}
+
+
+figure pre,
+figure code {
+    font-family: consolas, Menlo, monospace, 'PingFang SC', 'Microsoft YaHei';
+}
+
+figure.highlight {
+    width: 100%;
+    margin: 20px 0;
+
+    table {
+        background: #f3f3f3;
+        border-spacing: 0;
+        font-size: 14px;
+        width: 100%;
+        display: block;
+
+        tbody {
+            width: 100%;
+            display: block;
+
+            tr {
+                width: 100%;
+                display: flex;
+
+                td {
+                    display: block;
+                    border: 0;
+                    padding: 0;
+                }
+
+                td.gutter {
+                    /*width: 30px;*/
+                    background: #e1e1e1;
+                    text-align: right;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    justify-content: center;
+
+                    pre {
+                        padding: 0 5px 0 10px;
+                    }
+                }
+
+                td.code {
+                    width: calc(100% - 24px);
+                    overflow-x: auto;
+                }
+            }
+        }
+    }
 }
