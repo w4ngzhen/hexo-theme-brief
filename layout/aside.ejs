@@ -1,22 +1,12 @@
 <div class="aside-content">
     <div class="brand">
-        <h1 class="title"><%= config.title; %></h1>
+        <a class="title" href="<%- url_for("/"); %>"><%- config.title; %></a>
         <p class="subtitle"><%= config.subtitle; %></p>
     </div>
-    <ul class="menus">
-        <% for ( menu in theme.menus ) { %>
-            <%
-                const menuInfo = theme.menus[menu];
-                const [menuPath, icon] = menuInfo.split("||").map(e => e?.trim());
-            %>
-            <li class="menu-item" data-path="<%- menuPath %>">
-                <% if(theme['menus-config']['enable-icon'] && icon) { %>
-                    <i class="<%- icon %>"></i>
-                <% } %>
-                <a href="<%- url_for(menuPath) %>"><%- menu %></a>
-            </li>
-        <% } %>
-    </ul>
+
+    <div class="aside-menus-wrapper">
+        <%- partial("_partial/menus.ejs") %>
+    </div>
 
     <% if(is_post()) { %>
         <!-- 文章内容页面下，不再显示站点概览，而是显示TOC -->

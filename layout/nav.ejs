@@ -1,0 +1,29 @@
+<div class="nav-content">
+    <div class="nav-header">
+        <i class="fa fa-list-ul menu-icon-btn"></i>
+        <div class="nav-brand">
+            <a class="title" href="<%- url_for("/"); %>"><%- config.title; %></a>
+            <p class="subtitle"><%- config.subtitle; %></p>
+        </div>
+        <div class="search"></div>
+    </div>
+    <div class="nav-menus-wrapper">
+        <%- partial("_partial/menus.ejs"); %>
+    </div>
+</div>
+
+<script>
+  document.querySelector('.menu-icon-btn').onclick = () => {
+    const ele = document.querySelector('.nav-menus-wrapper');
+    if (!ele) {
+      console.warn('DOM node with class ".nav-menus-wrapper" is not found.');
+      return;
+    }
+    const activeClsName = 'nav-menus-show';
+    if (ele.classList.contains(activeClsName)) {
+      ele.classList.remove(activeClsName);
+    } else {
+      ele.classList.add(activeClsName);
+    }
+  }
+</script>
