@@ -10,15 +10,8 @@
     <%- css("css/layout.css"); %>
     <%- css("css/aside.css"); %>
     <%- css("css/post-list.css"); %>
-    <!--
-        代码高亮我们使用服务端处理。
-        「服务端高亮」指语法高亮在 hexo generate 或 hexo server 时完成。
-        hexo会为我们生成对应带有class的html节点，我们只需要引入对应的css即可。
-        不过，根据不同的配置会导致最后的HTML节点不一样，所以我们需要使用不同的样式：
-        https://hexo.io/zh-cn/docs/syntax-highlight#wrap，
-    -->
     <% if(is_post()) { %>
-        <!--        <%- css("lib/highlightjs/styles/default.min.css"); %>-->
+        <%- css("css/code-style/default.css"); %>
         <%- css("css/post.css"); %>
     <% } %>
 </head>
