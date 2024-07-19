@@ -1,0 +1,1 @@
+npm --registry registry https://registry.npmjs.org/ login
