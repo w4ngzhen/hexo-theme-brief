@@ -2,6 +2,8 @@
   "name": "hexo-theme-brief",
   "version": "1.0.0",
   "main": "index.js",
+  "description": "A brief theme based on the Hexo v7+",
+  "repository": "https://github.com/w4ngzhen/hexo-theme-brief",
   "author": "w4ngzhen <w4ngzhen@hotmail.com>",
   "license": "MIT",
   "dependencies": {},
