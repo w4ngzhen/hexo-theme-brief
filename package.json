@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-brief",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "description": "A brief theme based on the Hexo v7+",
   "repository": "https://github.com/w4ngzhen/hexo-theme-brief",
