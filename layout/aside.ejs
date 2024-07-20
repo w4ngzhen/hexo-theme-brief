@@ -10,8 +10,13 @@
 
     <% if(is_post()) { %>
         <!-- 文章内容页面下，不再显示站点概览，而是显示TOC -->
-        <div class="post-toc">
-            TOC
+        <div class="aside-post-toc">
+            <div class="toc-title">
+                Table of Contents
+            </div>
+            <div class="toc-list-content">
+                <%- toc(page.content, { max_depth: 3 }) %>
+            </div>
         </div>
     <% } else { %>
         <!-- 非文章内容页面，显示站点概览 -->
