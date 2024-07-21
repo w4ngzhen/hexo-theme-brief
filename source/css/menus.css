@@ -1,10 +1,10 @@
 .menus {
     margin: 0;
     padding: 10px 0;
-    background: white;
+    background: var(--menu-bg-color);
 
     .menu-item {
-        color: #555;
+        color: var(--menu-item-text-color);
         font-size: 12px;
         display: flex;
         align-items: center;
@@ -26,11 +26,11 @@
 
         &:hover {
             cursor: pointer;
-            background: #f5f5f5;
+            background: var(--menu-item-hover-bg-color);
         }
 
         &.active {
-            background: #f5f5f5;
+            background: var(--menu-item-active-bg-color);
         }
     }
 }

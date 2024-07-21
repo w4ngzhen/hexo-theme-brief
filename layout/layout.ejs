@@ -5,16 +5,25 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
           name="viewport">
-    <%- css("css/base.css"); %>
-    <%- css("lib/font-awesome-4.7.0/css/font-awesome.min.css"); %>
-    <%- css("css/layout.css"); %>
-    <%- css("css/aside.css"); %>
-    <%- css("css/nav.css"); %>
-    <%- css("css/menus.css"); %>
-    <%- css("css/post-list.css"); %>
+    <%-
+    css([
+        "css/theme-color/default.css",
+        "css/base.css",
+        "lib/font-awesome-4.7.0/css/font-awesome.min.css",
+        "css/layout.css",
+        "css/aside.css",
+        "css/nav.css",
+        "css/menus.css",
+        "css/post-list.css"
+    ]);
+    %>
     <% if(is_post()) { %>
-        <%- css("css/code-style/default.css"); %>
-        <%- css("css/post.css"); %>
+        <%-
+            css([
+                "css/code-style/default.css",
+                "css/post.css"
+            ]);
+        %>
     <% } %>
 </head>
 <body>

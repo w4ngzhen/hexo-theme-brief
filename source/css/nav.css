@@ -5,8 +5,8 @@
         padding: 10px;
         display: flex;
         align-items: center;
-        background: #333;
-        color: white;
+        background: var(--brand-bg-color);
+        color: var(--brand-color);
 
         .menu-icon-btn {
             &:hover {

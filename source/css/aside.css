@@ -8,7 +8,7 @@
         align-items: center;
         width: 100%;
         height: 100px;
-        background: #333;
+        background: var(--brand-bg-color);
         color: white;
 
         .title {
@@ -27,7 +27,7 @@
     }
 
     .aside-menus-wrapper {
-
+        /* todo */
     }
 
     .site-overview {
@@ -47,7 +47,7 @@
             margin: 10px 0 0 0;
             font-size: 12px;
             font-weight: bold;
-            color: #555;
+            color: var(--text-color);
         }
 
         .site-state {
@@ -64,11 +64,11 @@
 
                 .count {
                     font-weight: 500;
-                    color: #222;
+                    color: var(--text-color);
                 }
 
                 .name {
-                    color: #333;
+                    color: var(--text-color);
                     margin: 0;
                 }
 
@@ -91,11 +91,11 @@
                 }
 
                 .icon {
-
+                    /* todo */
                 }
 
                 .name {
-
+                    /*  todo */
                 }
             }
         }
@@ -107,13 +107,13 @@
         margin-top: 10px;
         padding: 10px 0;
         font-size: 12px;
-        color: #555;
+        color: var(--text-color);
 
         .toc-title {
             line-height: 16px;
             text-align: center;
             padding: 5px 0;
-            color: #e06c75;
+            color: var(--theme-color);
         }
 
         .toc-list-content {
@@ -125,7 +125,7 @@
 
             a {
                 &:hover {
-                    color: #e06c75;
+                    color: var(--theme-color);
                     text-decoration: underline;
                 }
             }

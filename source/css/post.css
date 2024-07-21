@@ -5,57 +5,71 @@
     line-height: 24px;
 }
 
-#article ul {
-    list-style-type: unset;
+/* 文章列表 */
+#article {
+    ul {
+        list-style-type: unset;
+    }
+
+    ol {
+        list-style-type: decimal;
+    }
 }
 
-#article h1,
-#article h2,
-#article h3,
-#article h4,
-#article h5,
-#article h6 {
-    line-height: 40px;
-    margin: 20px 0 15px;
+
+/* 文章 h1-h6 部分 */
+#article {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        line-height: 40px;
+        margin: 20px 0 15px;
+    }
+
+    h1 {
+        color: var(--post-h1-color);
+        font-size: 24px;
+        font-weight: 900;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--theme-color);
+    }
+
+    h2 {
+        color: var(--post-h2-color);
+        font-size: 20px;
+        border-left: 2px solid var(--theme-color);
+        padding-left: 10px;
+    }
+
+    h3 {
+        color: var(--post-h3-color);
+        font-size: 18px
+    }
 }
 
-#article h1 {
-    font-size: 25px;
-    font-weight: 900;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #e06c75;
-}
-
-#article h2 {
-    font-size: 20px;
-    border-left: 3px solid #73b1e0;
-    padding-left: 10px;
-}
-
-#article h3 {
-    font-size: 18px
-}
-
+/* 文本中链接 */
 #article a {
-    color: #e06c75;
+    color: var(--theme-color);
     text-decoration: none;
+
+    &:hover {
+        border-bottom: 1px solid;
+    }
 }
 
-#article a:hover {
-    border-bottom: 1px solid;
-}
-
-#article h1 a:hover {
-    border-bottom: none;
-}
-
+/* 文章内容文本 */
 #article p {
     margin: 0 0 20px;
-    color: #333;
+    color: var(--post-primary-text-color);
+
+    /* <code/> 文本段落里面的代码，主要是 markdown 里面使用反引号包裹的部分 */
 
     code {
-        color: #444;
-        background: #f3f3f3;
+        color: var(--post-code-color);
+        background: var(--post-code-bg-color);
         border-radius: 3px;
         font-size: 12px;
         padding: 2px 4px;
@@ -65,121 +79,82 @@
 
 /* 文章引用部分 */
 #article blockquote {
-    border-left: 4px solid #ddd;
-    color: #666;
-    margin: 0 0 10px;
-    padding: 0 15px;
+    border-left: 4px solid var(--post-blockquote-border-color);
+    color: var(--post-blockquote-color);
+    background: var(--post-blockquote-bg-color);
+    margin-left: 0;
+    margin-right: 0;
+    padding: 5px 5px 5px 15px;
+    font-size: small;
+
+    p {
+        margin: 0;
+    }
 }
 
-#article blockquote cite::before {
-    content: '-';
-    padding: 0 5px;
-}
-
-#article .blockquote-center {
-    border-left: 0;
-    margin: 40px 0;
-    padding: 0;
-    position: relative;
-    text-align: center;
-}
-
-#article .blockquote-center::before,
-#article .blockquote-center::after {
-    left: 0;
-    line-height: 1;
-    opacity: 0.6;
-    position: absolute;
-    width: 100%;
-}
-
-#article .blockquote-center::before {
-    border-top: 1px solid #ccc;
-    text-align: left;
-    top: -20px;
-    content: '\f10d';
-    font-family: 'Font Awesome 6 Free', serif;
-    font-weight: 900;
-}
-
-#article .blockquote-center::after {
-    border-bottom: 1px solid #ccc;
-    bottom: -20px;
-    text-align: right;
-    content: '\f10e';
-    font-family: 'Font Awesome 6 Free', serif;
-    font-weight: 900;
-}
-
-#article .blockquote-center p,
-#article .blockquote-center div {
-    text-align: center;
-}
-
-/* img */
+/* 文章图片 */
 #article img {
     display: block;
     max-width: 80%;
     height: auto;
     margin: 20px auto;
     border-radius: 5px;
-    box-shadow: 0 0 8px #999;
+    box-shadow: 0 0 8px var(--post-img-border-shadow);
     @media only screen and (max-width: 600px) {
         max-width: 100%;
     }
 }
 
 /* 代码结构部分（不包含代码高亮主题相关） */
-figure pre,
-figure code {
+#article figure {
     font-family: consolas, Menlo, monospace, 'PingFang SC', 'Microsoft YaHei';
-}
 
-figure.highlight {
-    width: 100%;
-    margin: 20px 0;
-
-    table {
-        background: #f3f3f3;
-        border-spacing: 0;
-        font-size: 14px;
+    &.highlight {
         width: 100%;
-        display: block;
+        margin: 20px 0;
 
-        tbody {
+        table {
+            background: var(--post-code-bg-color);
+            border-spacing: 0;
+            font-size: 14px;
             width: 100%;
             display: block;
 
-            tr {
+            tbody {
                 width: 100%;
-                display: flex;
+                display: block;
 
-                td {
-                    display: block;
-                    border: 0;
-                    padding: 0;
+                tr {
+                    width: 100%;
+                    display: flex;
 
-                    &.gutter {
-                        background: #e1e1e1;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: flex-end;
-                        justify-content: center;
-                        user-select: none;
+                    td {
+                        display: block;
+                        border: 0;
+                        padding: 0;
 
-                        pre {
-                            margin: 0;
-                            padding: 14px 5px 14px 10px;
+                        &.gutter {
+                            background: var(--post-code-line-number-bg-color);
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-end;
+                            justify-content: center;
+                            user-select: none;
+
+                            pre {
+                                margin: 0;
+                                padding: 14px 5px 14px 10px;
+                            }
                         }
-                    }
 
-                    &.code {
-                        flex: 1;
-                        overflow-x: auto;
+                        &.code {
+                            flex: 1;
+                            overflow-x: auto;
 
-                        pre {
-                            margin: 0;
-                            padding: 14px 5px 14px 10px;
+                            pre {
+                                margin: 0;
+                                padding: 14px 5px 14px 10px;
+                            }
                         }
                     }
                 }
@@ -187,3 +162,4 @@ figure.highlight {
         }
     }
 }
+

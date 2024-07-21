@@ -1,0 +1,26 @@
+:root {
+    --theme-color: #E06C75;
+    --body-bg-color: #F5F7F9;
+    --text-color: #555;
+    --border-color: #F1F1F1;
+    /* Brand */
+    --brand-color: #FFF;
+    --brand-bg-color: #333;
+    /* menus */
+    --menu-bg-color: #FFF;
+    --menu-item-text-color: #555;
+    --menu-item-hover-bg-color: #F5F5F5;
+    --menu-item-active-bg-color: #F5F5F5;
+    /* post color */
+    --post-primary-text-color: #333;
+    --post-code-color: #444;
+    --post-code-bg-color: #F3F3F3;
+    --post-code-line-number-bg-color: #E1E1E1;
+    --post-blockquote-color: #666;
+    --post-blockquote-bg-color: #F9F9F9;
+    --post-blockquote-border-color: #DDD;
+    --post-h1-color: ;
+    --post-h2-color: ;
+    --post-h3-color: ;
+    --post-img-border-shadow: #666;
+}
