@@ -5,6 +5,9 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
           name="viewport">
+    <link rel="icon" type="image/png" sizes="32x32" href="<%- theme?.favicon?.medium; %>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<%- theme?.favicon?.small; %>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<%- theme?.favicon?.apple_touch_icon; %>">
     <%-
     css([
         "css/theme-color/default.css",
@@ -29,6 +32,10 @@
         <!-- /tags/index.html 路由需要特殊处理 -->
         <%- css(["css/tag-cloud.css"]); %>
     <% } %>
+    <% if (path === "about/index.html") { %>
+        <!-- /tags/index.html 路由需要特殊处理 -->
+        <%- css(["css/about.css"]); %>
+    <% } %>
 </head>
 <body>
 
@@ -52,6 +59,8 @@
         <% if (path === "tags/index.html") { %>
             <!-- /tags/index.html 路由需要特殊处理 -->
             <%- partial("_partial/tag-cloud.ejs"); %>
+        <% } else if (path === "about/index.html") { %>
+            <%- partial("_partial/about.ejs"); %>
         <% } else { %>
             <%- body; %>
         <% } %>

@@ -1,3 +1,9 @@
 <div id="article">
+    <header>
+        <p class="article-title"><%- page.title; %></p>
+        <p class="article-date">
+            <%- date(page.date, "YYYY-MM-DD"); %>
+        </p>
+    </header>
     <%- page.content; %>
 </div>

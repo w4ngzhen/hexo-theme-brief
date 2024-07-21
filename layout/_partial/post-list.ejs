@@ -1,0 +1,28 @@
+<ul id="post-list">
+    <%
+    function postHasTag(postTags, tag) {
+        for (let i = 0; i < postTags.length; i++) {
+            if (postTags[i].name === tag) {
+                return true;
+            }
+        }
+        return false;
+    }
+    site.posts.data.filter(p => {
+        if (isTagPage && page.tag) {
+            return postHasTag(p.tags.data, page.tag);
+        } else {
+            return true;
+        }
+    }).sort((p1, p2) => p2.date - p1.date).forEach(post => {
+    %>
+        <li class="post-item">
+            <p class="date">
+                <%- date(post.date, "YYYY年MM月DD日"); %>
+            </p>
+            <a class="title" href="<%- url_for(post.path); %>">
+                <%- post.title; %>
+            </a>
+        </li>
+    <% }); %>
+</ul>

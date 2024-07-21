@@ -7,10 +7,16 @@ menus-config:
   enable-icon: true
 
 avatar:
-  url: /images/tiger400.jpg
+  url: /images/avatar.png
 
 site-state: true
 
 social:
   GitHub: https://github.com/w4ngzhen || fa fa-github
   RSS: /atom.xml || fa fa-rss
+
+favicon:
+  small: /images/icon_16x16.png
+  medium: /images/icon_32x32.png
+  apple_touch_icon: /images/icon_32x32.png
+  safari_pinned_tab: /images/icon_32x32.png
