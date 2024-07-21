@@ -116,7 +116,7 @@
             color: var(--theme-color);
         }
 
-        .toc-list-content {
+        .aside-toc-list-content {
 
             span {
                 white-space: break-spaces;
