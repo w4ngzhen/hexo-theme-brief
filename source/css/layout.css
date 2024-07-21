@@ -25,8 +25,20 @@
 
     #content-container {
         flex: 1;
-        background: white;
         overflow-y: auto;
+
+        .content-body {
+            padding: 10px;
+            background: white;
+        }
+
+        .content-footer {
+            background: var(--body-bg-color);
+
+            .content-footer-wrapper {
+                height: 60px;
+            }
+        }
     }
 }
 
