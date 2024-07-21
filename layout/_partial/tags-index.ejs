@@ -1,0 +1,17 @@
+<div id="tags-index">
+    <div class="tag-cloud-header">
+        <%- site.tags.length; %>
+        tags in total
+    </div>
+    <div class="tag-cloud">
+        <%-
+        tagcloud({
+            min_font: 14,
+            max_font: 20,
+            color: true,
+            start_color: "#999",
+            end_color: "#000"
+        });
+        %>
+    </div>
+</div>

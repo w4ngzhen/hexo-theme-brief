@@ -1,0 +1,17 @@
+#tags-index {
+    padding: 10px;
+
+    .tag-cloud-header {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .tag-cloud {
+        a {
+            display: inline-block;
+            padding: 5px 10px;
+        }
+    }
+}
