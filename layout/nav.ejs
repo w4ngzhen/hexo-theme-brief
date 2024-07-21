@@ -24,7 +24,11 @@
 <script>
 
   function listenOnClick(btnCls, currDropdownCls, allDropdownClsList) {
-    document.querySelector(btnCls).onclick = () => {
+    const btn = document.querySelector(btnCls);
+    if (!btn) {
+      return;
+    }
+    btn.onclick = () => {
       const currEle = document.querySelector(currDropdownCls);
       if (!currEle) {
         console.warn(`DOM node with class "${currDropdownCls}" is not found.`);
