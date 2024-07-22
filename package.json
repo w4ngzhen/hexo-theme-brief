@@ -7,6 +7,11 @@
   "author": "w4ngzhen <w4ngzhen@hotmail.com>",
   "license": "MIT",
   "dependencies": {},
+  "files": [
+    "layout/**/*",
+    "source/**/*",
+    "_config.yml"
+  ],
   "devDependencies": {
     "prettier": "^3.3.3",
     "prettier-plugin-ejs": "^1.0.3"

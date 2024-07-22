@@ -6,12 +6,12 @@ A brief theme based on the Hexo **v7.3+**. Inspired by the [hexo-theme-next](htt
 
 ### by manual
 
-```bash
-cd /path/to/your/hexo-blog
-git clone git@github.com:w4ngzhen/hexo-theme-brief.git themes/brief
-```
+1. download the sourcecode(don't use git clone)
+2. cd `/path/to/your/hexo-blog`
+3. make "themes/brief" dir
+4. copy the "source", "layout" and "_config.yml" dir to your "themes/brief" dir
 
-confirm that the 'themes/brief' dir is existing. 
+![](doc/imgs/install-by-manula.png)
 
 ### by NPM
 
