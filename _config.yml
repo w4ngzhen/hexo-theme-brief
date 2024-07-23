@@ -20,3 +20,16 @@ favicon:
   medium: /images/icon_32x32.png
   apple_touch_icon: /images/icon_32x32.png
   safari_pinned_tab: /images/icon_32x32.png
+
+comments:
+  # Gitalk
+  # For more information: https://gitalk.github.io
+  gitalk:
+    enable: false
+    owner: ''
+    repo: ''
+    client_id: ''
+    client_secret: ''
+    admin_user: ''
+    distraction_free_mode: false
+    language:
