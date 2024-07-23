@@ -16,6 +16,7 @@ if(theme.comments?.gitalk?.enable) {
 <%- js("lib/md5/md5.min.js"); %>
 <%- css("lib/gitalk/gitalk.1.8.0.css"); %>
 <%- js("lib/gitalk/gitalk.1.8.0.min.js"); %>
+<%- css("css/gitalk.css"); %>
 <script>
   const gitalk = new Gitalk({
     clientID: '<%- client_id; %>',
