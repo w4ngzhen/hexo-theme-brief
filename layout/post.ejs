@@ -1,18 +1,19 @@
-<div id="article">
-    <header>
-        <p class="article-title"><%- page.title; %></p>
-        <p class="article-date">
-            <%- date(page.date, "YYYY-MM-DD"); %>
-        </p>
-    </header>
-    <%- page.content; %>
+<div id="article-root">
+    <div id="article">
+        <header>
+            <p class="article-title"><%- page.title; %></p>
+            <p class="article-date">
+                <%- date(page.date, "YYYY-MM-DD"); %>
+            </p>
+        </header>
+        <%- page.content; %>
+    </div>
+    <%
+    if(theme.comments?.gitalk?.enable) {
+        const { owner, repo, client_id, client_secret, admin_user } = theme.comments.gitalk;
+    %>
+    <div id="article-comment-gitalk"></div>
 </div>
-
-<%
-if(theme.comments?.gitalk?.enable) {
-    const { owner, repo, client_id, client_secret, admin_user } = theme.comments.gitalk;
-%>
-<div id="article-comment-gitalk"></div>
 <%- js("lib/md5/md5.min.js"); %>
 <%- css("lib/gitalk/gitalk.1.8.0.css"); %>
 <%- js("lib/gitalk/gitalk.1.8.0.min.js"); %>
@@ -26,7 +27,7 @@ if(theme.comments?.gitalk?.enable) {
     admin: ['<%- admin_user; %>'],
     id: md5(location.pathname),      // Ensure uniqueness and length less than 50
     distractionFreeMode: false  // Facebook-like distraction free mode
-  })
-  gitalk.render('article-comment-gitalk')
+  });
+  gitalk.render("article-comment-gitalk");
 </script>
 <% } %>

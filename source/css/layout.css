@@ -27,50 +27,58 @@
         flex: 1;
         overflow-y: auto;
 
-        .content-body {
-            padding: 10px;
-            background: white;
-            margin-bottom: auto;
-        }
+        .content-wrapper {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
 
-        .content-footer {
-            background: var(--body-bg-color);
-
-            .content-footer-wrapper {
+            .content-body {
+                flex: 1;
                 padding: 10px;
+                background: white;
+                margin-bottom: auto;
+            }
 
-                p {
-                    margin: 0;
-                    color: var(--text-color);
-                    font-size: 14px;
+            .content-footer {
+                background: var(--body-bg-color);
 
-                    &:not(:last-child) {
-                        margin-bottom: 5px;
+                .content-footer-wrapper {
+                    padding: 10px;
+
+                    p {
+                        margin: 0;
+                        color: var(--text-color);
+                        font-size: 14px;
+
+                        &:not(:last-child) {
+                            margin-bottom: 5px;
+                        }
+
+                        display: flex;
+                        justify-content: center;
+
+                        span.love {
+                            color: red;
+                        }
                     }
 
-                    display: flex;
-                    justify-content: center;
-
-                    span.love {
-                        color: red;
+                    p.author {
+                        span {
+                            margin-left: 5px;
+                        }
                     }
-                }
 
-                p.author {
-                    span {
-                        margin-left: 5px;
-                    }
-                }
-
-                p.power {
-                    a {
-                        text-decoration: underline;
-                        color: var(--theme-color);
-                        margin-left: 5px;
+                    p.power {
+                        a {
+                            text-decoration: underline;
+                            color: var(--theme-color);
+                            margin-left: 5px;
+                        }
                     }
                 }
             }
         }
+
     }
 }
 

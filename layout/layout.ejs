@@ -52,20 +52,23 @@
 
     <!-- 内容区域 -->
     <div id="content-container">
-        <div class="content-body">
-            <!-- 该区域内容，hexo内部会根据具体的路径找对应的模板，例如，首页就是用index.ejs，文章路径就使用post.ejs -->
-            <% if (path === "tags/index.html") { %>
-                <!-- /tags/index.html 路由需要特殊处理 -->
-                <%- partial("_partial/tag-cloud.ejs"); %>
-            <% } else if (path === "about/index.html") { %>
-                <%- partial("_partial/about.ejs"); %>
-            <% } else { %>
-                <%- body; %>
-            <% } %>
+        <div class="content-wrapper">
+            <div class="content-body">
+                <!-- 该区域内容，hexo内部会根据具体的路径找对应的模板，例如，首页就是用index.ejs，文章路径就使用post.ejs -->
+                <% if (path === "tags/index.html") { %>
+                    <!-- /tags/index.html 路由需要特殊处理 -->
+                    <%- partial("_partial/tag-cloud.ejs"); %>
+                <% } else if (path === "about/index.html") { %>
+                    <%- partial("_partial/about.ejs"); %>
+                <% } else { %>
+                    <%- body; %>
+                <% } %>
+            </div>
+            <div class="content-footer">
+                <%- partial("_partial/content-footer.ejs"); %>
+            </div>
         </div>
-        <div class="content-footer">
-            <%- partial("_partial/content-footer.ejs"); %>
-        </div>
+
     </div>
 
 </div>
