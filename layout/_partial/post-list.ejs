@@ -9,6 +9,7 @@
         return false;
     }
     site.posts.data.filter(p => {
+        // isTagPage是使用该partial的参数传递而来
         if (isTagPage && page.tag) {
             return postHasTag(p.tags.data, page.tag);
         } else {
@@ -17,12 +18,15 @@
     }).sort((p1, p2) => p2.date - p1.date).forEach(post => {
     %>
         <li class="post-item">
-            <p class="date">
-                <%- date(post.date, "YYYY年MM月DD日"); %>
-            </p>
+            <div class="info">
+           <span class="date">
+            <%- date(post.date, "YYYY年MM月DD日"); %>
+           </span>
+            </div>
             <a class="title" href="<%- url_for(post.path); %>">
                 <%- post.title; %>
             </a>
+
         </li>
     <% }); %>
 </ul>

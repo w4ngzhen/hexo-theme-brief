@@ -1,0 +1,66 @@
+.header-content {
+    @media only screen and (max-height: 999px) {
+        width: 100%;
+    }
+    @media only screen and (min-width: 1000px) {
+        width: 700px;
+    }
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+
+    .brand {
+        .title {
+            font-size: 24px;
+            color: #424242;
+        }
+
+        .subtitle {
+            margin: 0;
+            font-size: 14px;
+            color: #999;
+        }
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        .social {
+            display: inline-flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: 8px;
+
+            .social-item {
+                color: var(--text-color);
+                font-size: 12px;
+
+                &:not(:last-child) {
+                    margin-right: 16px;
+                }
+            }
+        }
+
+        .menus {
+            display: inline-flex;
+            justify-content: flex-end;
+            align-items: baseline;
+
+            .menu-item {
+                color: #999;
+                font-size: 16px;
+
+                &:not(:last-child) {
+                    margin-right: 16px;
+                }
+
+                &.active {
+                    color: #111;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

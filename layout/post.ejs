@@ -1,33 +1,29 @@
-<div id="article-root">
-    <div id="article">
-        <header>
-            <p class="article-title"><%- page.title; %></p>
-            <p class="article-date">
-                <%- date(page.date, "YYYY-MM-DD"); %>
-            </p>
-        </header>
+<div id="article">
+    <header class="article-header">
+        <p class="title"><%- page.title; %></p>
+    </header>
+    <p class="article-date">
+        <%- date(page.date, "YYYY-MM-DD"); %>
+    </p>
+    <div class="article-toc">
+        <label class="toc-title" for="toc-trigger">目录</label>
+        <input id="toc-trigger" type="checkbox" checked/>
+        <div class="toc-content">
+            <%- toc(page.content, {max_depth: 3}); %>
+        </div>
+    </div>
+    <div class="article-content">
         <%- page.content; %>
     </div>
-    <%
-    if(theme.comments?.gitalk?.enable) {
-        const { owner, repo, client_id, client_secret, admin_user } = theme.comments.gitalk;
-    %>
-    <div id="article-comment-gitalk"></div>
 </div>
-<%- js("lib/md5/md5.min.js"); %>
-<%- css("lib/gitalk/gitalk.1.8.0.css"); %>
-<%- js("lib/gitalk/gitalk.1.8.0.min.js"); %>
-<%- css("css/gitalk.css"); %>
+<!-- medium zoom -->
+<%- js("lib/medium-zoom@1.1.0/medium-zoom.min.umd.js"); %>
+<%- css("lib/medium-zoom@1.1.0/style.min.css"); %>
 <script>
-  const gitalk = new Gitalk({
-    clientID: '<%- client_id; %>',
-    clientSecret: '<%- client_secret; %>',
-    repo: '<%- repo; %>',
-    owner: '<%- owner; %>',
-    admin: ['<%- admin_user; %>'],
-    id: md5(location.pathname),      // Ensure uniqueness and length less than 50
-    distractionFreeMode: false  // Facebook-like distraction free mode
-  });
-  gitalk.render("article-comment-gitalk");
+  // 获取文章中所有的img
+  mediumZoom('#article img', {
+    background: 'rgba(186,218,85,0.5)',
+    margin: 24,
+  })
 </script>
-<% } %>
+<%- partial("_partial/comment/gitalk.ejs"); %>

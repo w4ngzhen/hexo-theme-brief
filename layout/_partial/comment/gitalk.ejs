@@ -1,0 +1,22 @@
+<%
+if(theme.comments?.gitalk?.enable) {
+    const {owner, repo, client_id, client_secret, admin_user} = theme.comments.gitalk;
+%>
+<div id="article-comment-gitalk"></div>
+<%- js("lib/md5/md5.min.js"); %>
+<%- css("lib/gitalk/gitalk.1.8.0.css"); %>
+<%- js("lib/gitalk/gitalk.1.8.0.min.js"); %>
+<%- css("css/comment/gitalk.css"); %>
+<script>
+  const gitalk = new Gitalk({
+    clientID: '<%- client_id; %>',
+    clientSecret: '<%- client_secret; %>',
+    repo: '<%- repo; %>',
+    owner: '<%- owner; %>',
+    admin: ['<%- admin_user; %>'],
+    id: md5(location.pathname),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  });
+  gitalk.render("article-comment-gitalk");
+</script>
+<% } %>

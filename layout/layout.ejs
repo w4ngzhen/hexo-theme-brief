@@ -10,13 +10,11 @@
     <link rel="apple-touch-icon" sizes="180x180" href="<%- theme?.favicon?.apple_touch_icon; %>">
     <%-
     css([
+        "lib/font-awesome-4.7.0/css/font-awesome.min.css",
         "css/theme-color/default.css",
         "css/base.css",
-        "lib/font-awesome-4.7.0/css/font-awesome.min.css",
         "css/layout.css",
-        "css/aside.css",
-        "css/nav.css",
-        "css/menus.css",
+        "css/header.css",
         "css/post-list.css"
     ]);
     %>
@@ -24,7 +22,7 @@
         <%-
             css([
                 "css/code-style/default.css",
-                "css/post.css"
+                "css/post.css",
             ]);
         %>
     <% } %>
@@ -38,41 +36,19 @@
     <% } %>
 </head>
 <body>
-
 <div id="main">
-    <!-- 引入侧边栏 -->
-    <aside id="aside-container">
-        <%- include('aside.ejs') %>
-    </aside>
-    <!-- 顶部导航 -->
-    <nav id="nav-container">
-        <%- include('nav.ejs') %>
-    </nav>
-    <!-- 上述两个部分，会根据媒体查询进行隐藏，小屏幕使用顶部 -->
-
-    <!-- 内容区域 -->
-    <div id="content-container">
-        <div class="content-wrapper">
-            <div class="content-body">
-                <!-- 该区域内容，hexo内部会根据具体的路径找对应的模板，例如，首页就是用index.ejs，文章路径就使用post.ejs -->
-                <% if (path === "tags/index.html") { %>
-                    <!-- /tags/index.html 路由需要特殊处理 -->
-                    <%- partial("_partial/tag-cloud.ejs"); %>
-                <% } else if (path === "about/index.html") { %>
-                    <%- partial("_partial/about.ejs"); %>
-                <% } else { %>
-                    <%- body; %>
-                <% } %>
-            </div>
-            <div class="content-footer">
-                <%- partial("_partial/content-footer.ejs"); %>
-            </div>
+    <header class="header">
+        <%- partial("_partial/header.ejs"); %>
+    </header>
+    <div class="content">
+        <div class="center">
+            <%- body; %>
         </div>
-
     </div>
-
+    <footer class="footer">
+        <%- partial("_partial/footer.ejs") %>
+    </footer>
 </div>
-<!-- 侧边导航部分匹配路由的高亮会通过下述js进行处理 -->
 <%- js("js/path-change.js"); %>
 </body>
 </html>
