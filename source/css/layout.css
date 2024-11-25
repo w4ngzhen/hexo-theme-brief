@@ -67,6 +67,7 @@
                     text-decoration: underline;
                     color: var(--theme-color);
                     margin-left: 5px;
+                    margin-right: 5px;
                 }
             }
         }
