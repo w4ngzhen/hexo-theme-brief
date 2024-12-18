@@ -32,7 +32,7 @@
             font-weight: 500;
 
             &:hover {
-                color: #08F;
+                text-decoration: underline;
             }
         }
 
