@@ -1,66 +1,140 @@
 .header-content {
     @media only screen and (max-height: 999px) {
         width: 100%;
+        .desktop-style {
+            display: none;
+        }
+
+        .mobile-style {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .header-brand {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background: var(--brand-bg-color);
+                width: 100%;
+                padding-bottom: 8px;
+                margin-bottom: 8px;
+
+                .header-brand-title {
+                }
+
+                .header-brand-subtitle {
+                    font-size: 10px;
+                }
+            }
+
+            .social {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 8px;
+
+                .header-social-item {
+                    color: var(--social-item-color-mobile);
+                }
+            }
+
+            .menus {
+                display: flex;
+                justify-content: center;
+                align-items: baseline;
+                margin-bottom: 8px;
+
+                .header-menu-item {
+                    color: var(--menu-item-color-mobile);
+
+                    &.active {
+                        color: var(--menu-item-color-mobile-active);
+                    }
+                }
+            }
+        }
     }
     @media only screen and (min-width: 1000px) {
         width: 700px;
-    }
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
+        .desktop-style {
+            display: flex;
+            padding: 10px;
+            justify-content: space-between;
+            background: var(--brand-bg-color);
 
-    .brand {
-        .title {
-            font-size: 24px;
-            color: #424242;
-        }
+            .header-brand {
+                display: block;
+            }
 
-        .subtitle {
-            margin: 0;
-            font-size: 14px;
-            color: #999;
-        }
-    }
+            .right {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
 
-    .right {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
+                .social {
+                    display: inline-flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    margin-bottom: 8px;
 
-        .social {
-            display: inline-flex;
-            justify-content: flex-end;
-            align-items: center;
-            margin-bottom: 8px;
-
-            .social-item {
-                color: var(--text-color);
-                font-size: 12px;
-
-                &:not(:last-child) {
-                    margin-right: 16px;
+                    .header-social-item {
+                        color: var(--social-item-color-pc);
+                    }
                 }
+
+                .menus {
+                    display: inline-flex;
+                    justify-content: flex-end;
+                    align-items: baseline;
+
+
+                    .header-menu-item {
+                        color: var(--menu-item-color-pc);
+
+                        &.active {
+                            color: var(--menu-item-color-pc-active);
+                        }
+                    }
+                }
+
             }
         }
 
-        .menus {
-            display: inline-flex;
-            justify-content: flex-end;
-            align-items: baseline;
-
-            .menu-item {
-                color: #999;
-                font-size: 16px;
-
-                &:not(:last-child) {
-                    margin-right: 16px;
-                }
-
-                &.active {
-                    color: #111;
-                    text-decoration: underline;
-                }
-            }
+        .mobile-style {
+            display: none;
         }
     }
+
+    .header-brand-title {
+        font-size: 24px;
+        color: var(--brand-color)
+    }
+
+    .header-brand-subtitle {
+        margin: 0;
+        font-size: 14px;
+        color: var(--brand-color)
+    }
+
+    .header-social-item {
+        font-size: 12px;
+
+        &:not(:last-child) {
+            margin-right: 16px;
+        }
+    }
+
+
+    .header-menu-item {
+        font-size: 14px;
+
+        &:not(:last-child) {
+            margin-right: 16px;
+        }
+
+        &.active {
+            text-decoration: underline;
+        }
+    }
+
 }

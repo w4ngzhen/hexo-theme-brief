@@ -1,15 +1,46 @@
 <div class="header-content">
-    <div class="brand">
-        <a class="title" href="<%- url_for("/"); %>"><%- config.title; %></a>
-        <p class="subtitle"><%= config.subtitle; %></p>
+    <div class="desktop-style">
+        <div class="header-brand">
+            <a class="header-brand-title" href="<%- url_for("/"); %>"><%- config.title; %></a>
+            <p class="header-brand-subtitle"><%= config.subtitle; %></p>
+        </div>
+        <div class="right">
+            <% if(theme['social']) { %>
+                <div class="social">
+                    <% for (item in theme['social']) {
+                        const [url, icon] = (theme['social'][item] || '').split('||').map(e => e.trim());
+                    %>
+                    <div class="header-social-item">
+                        <i class="icon <%- icon %>"></i>
+                        <a class="name" href="<%- url_for(url) %>"><%- item %></a>
+                    </div>
+                    <% } %>
+                </div>
+            <% } %>
+            <div class="menus">
+                <% for ( menu in theme.menus ) { %>
+                    <%
+                        const menuInfo = theme.menus[menu];
+                        const [menuPath, _icon] = menuInfo.split("||").map(e => e?.trim());
+                    %>
+                    <div class="header-menu-item" data-path="<%- menuPath; %>">
+                        <a href="<%- url_for(menuPath); %>"><%- menu; %></a>
+                    </div>
+                <% } %>
+            </div>
+        </div>
     </div>
-    <div class="right">
+    <div class="mobile-style">
+        <div class="header-brand">
+            <a class="header-brand-title" href="<%- url_for("/"); %>"><%- config.title; %></a>
+            <p class="header-brand-subtitle"><%= config.subtitle; %></p>
+        </div>
         <% if(theme['social']) { %>
             <div class="social">
                 <% for (item in theme['social']) {
                     const [url, icon] = (theme['social'][item] || '').split('||').map(e => e.trim());
                 %>
-                <div class="social-item">
+                <div class="header-social-item">
                     <i class="icon <%- icon %>"></i>
                     <a class="name" href="<%- url_for(url) %>"><%- item %></a>
                 </div>
@@ -22,7 +53,7 @@
                     const menuInfo = theme.menus[menu];
                     const [menuPath, _icon] = menuInfo.split("||").map(e => e?.trim());
                 %>
-                <div class="menu-item" data-path="<%- menuPath; %>">
+                <div class="header-menu-item" data-path="<%- menuPath; %>">
                     <a href="<%- url_for(menuPath); %>"><%- menu; %></a>
                 </div>
             <% } %>

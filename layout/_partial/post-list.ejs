@@ -1,20 +1,21 @@
 <ul id="post-list">
     <%
-    function postHasTag(postTags, tag) {
-        for (let i = 0; i < postTags.length; i++) {
-            if (postTags[i].name === tag) {
+    function filterPost(postAttrData, targetAttr) {
+        for (let i = 0; i < postAttrData.length; i++) {
+            if (postAttrData[i].name === targetAttr) {
                 return true;
             }
         }
         return false;
     }
-    site.posts.data.filter(p => {
-        // isTagPage是使用该partial的参数传递而来
-        if (isTagPage && page.tag) {
-            return postHasTag(p.tags.data, page.tag);
-        } else {
-            return true;
+    site.posts.data.filter(_post => {
+        if (filterType === "tag") {
+            return filterPost(_post.tags.data, page.tag);
         }
+        if (filterType === "category") {
+            return filterPost(_post.categories.data, page.category);
+        }
+        return true;
     }).sort((p1, p2) => p2.date - p1.date).forEach(post => {
     %>
         <li class="post-item">
@@ -26,7 +27,6 @@
             <a class="title" href="<%- url_for(post.path); %>">
                 <%- post.title; %>
             </a>
-
         </li>
     <% }); %>
 </ul>

@@ -1,0 +1,10 @@
+<!--
+category.ejs用于categories主页下的指定category
+例如：/categories/linux
+ -->
+<div class="filter-post-list-wrapper">
+    <div class="filter-post-list-header">
+        分类: <%- page.category; %>
+    </div>
+    <%- partial("_partial/post-list.ejs", { filterType: "category" }); %>
+</div>

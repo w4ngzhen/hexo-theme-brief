@@ -7,10 +7,13 @@
     --brand-color: #FFF;
     --brand-bg-color: #333;
     /* menus */
-    --menu-bg-color: #FFF;
-    --menu-item-text-color: #555;
-    --menu-item-hover-bg-color: #F5F5F5;
-    --menu-item-active-bg-color: #F5F5F5;
+    --menu-item-color-pc: #999;
+    --menu-item-color-pc-active: #EEE;
+    --menu-item-color-mobile: #999;
+    --menu-item-color-mobile-active: #333;
+    /* social */
+    --social-item-color-pc: #EEE;
+    --social-item-color-mobile: #111;
     /* post color */
     --post-primary-text-color: #333;
     --post-code-color: #444;

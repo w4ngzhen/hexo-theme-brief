@@ -7,9 +7,9 @@
     </p>
     <div class="article-toc">
         <label class="toc-title" for="toc-trigger">目录</label>
-        <input id="toc-trigger" type="checkbox" checked/>
+        <input id="toc-trigger" type="checkbox" checked />
         <div class="toc-content">
-            <%- toc(page.content, {max_depth: 3}); %>
+            <%- toc(page.content, { max_depth: 3 }); %>
         </div>
     </div>
     <div class="article-content">
@@ -21,9 +21,8 @@
 <%- css("lib/medium-zoom@1.1.0/style.min.css"); %>
 <script>
   // 获取文章中所有的img
-  mediumZoom('#article img', {
-    background: 'rgba(186,218,85,0.5)',
-    margin: 24,
-  })
+  mediumZoom("#article img", {
+    background: "rgba(186,218,85,0.5)",
+    margin: 24
+  });
 </script>
-<%- partial("_partial/comment/gitalk.ejs"); %>

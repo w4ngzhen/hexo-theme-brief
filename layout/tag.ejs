@@ -2,9 +2,9 @@
 这个tag页面指的是选中某个tag后的进一步URL路径
 例如：/tags/linux
  -->
-<div class="tag-post-list-wrapper">
-    <div class="tag-post-list-header">
+<div class="filter-post-list-wrapper">
+    <div class="filter-post-list-header">
         Tag: <%- page.tag; %>
     </div>
-    <%- partial("_partial/post-list.ejs", {isTagPage: true}); %>
+    <%- partial("_partial/post-list.ejs", { filterType: "tag" }); %>
 </div>
