@@ -4,13 +4,8 @@ menus:
 #  tags: /tags/
 #  archives: /archives/
 
-avatar:
-  url: /images/avatar.png
-
-site-state: true
-
 social:
-#  GitHub: https://github.com/w4ngzhen || fa fa-github
+#  GitHub: https://github.com/w4ngzhen/hexo-theme-brief || fa fa-github
 #  RSS: /atom.xml || fa fa-rss
 
 favicon:
