@@ -1,15 +1,18 @@
 menus:
-#  home: /
-#  about: /about/
-#  tags: /tags/
-#  archives: /archives/
+  主页: /
+#  关于: /about/
+#  分类: /categories/
+#  标签: /tags/
+#  友情链接: /links/
+# 上述 关于、分类、标签、友链等路径，
+# 需要使用者在Hexo项目根目录/source目录中创建对应的目录，并在目录中创建index.md并设置layout
+# 可参考 https://github.com/w4ngzhen/brief-theme-example
 
 social:
 #  GitHub: https://github.com/w4ngzhen/hexo-theme-brief || fa fa-github
-#  RSS: /atom.xml || fa fa-rss
 
 favicon:
-#  small: /images/icon_16x16.png
-#  medium: /images/icon_32x32.png
-#  apple_touch_icon: /images/icon_32x32.png
-#  safari_pinned_tab: /images/icon_32x32.png
+  small: /images/icon.svg
+  medium: /images/icon.svg
+  apple_touch_icon: /images/icon.svg
+  safari_pinned_tab: /images/icon.svg
