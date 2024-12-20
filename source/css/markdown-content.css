@@ -1,0 +1,173 @@
+/* 文章内容部分（主要是文字） */
+.markdown-content {
+    width: 100%;
+    padding: 10px 0 20px 0;
+    line-height: 24px;
+}
+
+
+/* 文章中的列表 */
+.markdown-content {
+    ul {
+        list-style-type: unset;
+        word-break: break-all;
+    }
+
+    ol {
+        list-style-type: decimal;
+        word-break: break-all;
+    }
+}
+
+
+/* 文章 h1-h6 部分 */
+.markdown-content {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        line-height: 40px;
+        margin: 20px 0 15px;
+    }
+
+    h1 {
+        color: var(--post-h1-color);
+        font-size: 22px;
+        font-weight: 600;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--theme-color);
+    }
+
+    h2 {
+        color: var(--post-h2-color);
+        font-size: 18px;
+        border-left: 2px solid var(--theme-color);
+        padding-left: 10px;
+        font-weight: 550;
+    }
+
+    h3 {
+        color: var(--post-h3-color);
+        font-size: 16px;
+        font-weight: 500;
+    }
+}
+
+/* 文本中链接 */
+.markdown-content a {
+    color: var(--theme-color);
+    text-decoration: none;
+
+    &:hover {
+        border-bottom: 1px solid;
+    }
+}
+
+/* 文章内容文本 */
+.markdown-content p {
+    margin: 0 0 20px;
+    color: var(--post-primary-text-color);
+
+    /* <code/> 文本段落里面的代码，主要是 markdown 里面使用反引号包裹的部分 */
+
+    code {
+        color: var(--post-code-color);
+        background: var(--post-code-bg-color);
+        border-radius: 3px;
+        font-size: 12px;
+        padding: 2px 4px;
+        overflow-wrap: break-word;
+    }
+
+    a {
+        word-break: break-all;
+    }
+}
+
+/* 文章引用部分 */
+.markdown-content blockquote {
+    border-left: 4px solid var(--post-blockquote-border-color);
+    color: var(--post-blockquote-color);
+    background: var(--post-blockquote-bg-color);
+    margin-left: 0;
+    margin-right: 0;
+    padding: 5px 5px 5px 15px;
+    font-size: small;
+
+    p {
+        margin: 0;
+    }
+}
+
+/* 文章图片 */
+.markdown-content img {
+    display: block;
+    max-width: 80%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 0 0 8px var(--post-img-border-shadow);
+    @media only screen and (max-width: 600px) {
+        max-width: 100%;
+    }
+}
+
+/* 代码结构部分（不包含代码高亮主题相关） */
+.markdown-content figure {
+    font-family: consolas, Menlo, monospace, 'PingFang SC', 'Microsoft YaHei';
+
+    &.highlight {
+        width: 100%;
+        margin: 20px 0;
+
+        table {
+            background: var(--post-code-bg-color);
+            border-spacing: 0;
+            font-size: 14px;
+            width: 100%;
+            display: block;
+
+            tbody {
+                width: 100%;
+                display: block;
+
+                tr {
+                    width: 100%;
+                    display: flex;
+
+                    td {
+                        display: block;
+                        border: 0;
+                        padding: 0;
+
+                        &.gutter {
+                            background: var(--post-code-line-number-bg-color);
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-end;
+                            justify-content: center;
+                            user-select: none;
+
+                            pre {
+                                margin: 0;
+                                padding: 14px 5px 14px 10px;
+                            }
+                        }
+
+                        &.code {
+                            flex: 1;
+                            overflow-x: auto;
+
+                            pre {
+                                margin: 0;
+                                padding: 14px 5px 14px 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
