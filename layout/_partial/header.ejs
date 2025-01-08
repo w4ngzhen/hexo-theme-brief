@@ -1,10 +1,10 @@
-<div class="header-content">
-    <div class="desktop-style">
+<div id="header-content" class="header-content-pc">
+    <div class="content-wrapper">
         <div class="header-brand">
             <a class="header-brand-title" href="<%- url_for("/"); %>"><%- config.title; %></a>
             <p class="header-brand-subtitle"><%= config.subtitle; %></p>
         </div>
-        <div class="right">
+        <div class="extend-info">
             <% if(theme['social']) { %>
                 <div class="social">
                     <% for (item in theme['social']) {
@@ -30,34 +30,41 @@
             </div>
         </div>
     </div>
-    <div class="mobile-style">
-        <div class="header-brand">
-            <a class="header-brand-title" href="<%- url_for("/"); %>"><%- config.title; %></a>
-            <p class="header-brand-subtitle"><%= config.subtitle; %></p>
-        </div>
-        <% if(theme['social']) { %>
-            <div class="social">
-                <% for (item in theme['social']) {
-                    const [url, icon] = (theme['social'][item] || '').split('||').map(e => e.trim());
-                %>
-                <div class="header-social-item">
-                    <i class="icon <%- icon %>"></i>
-                    <a class="name" href="<%- url_for(url) %>"><%- item %></a>
-                </div>
-                <% } %>
-            </div>
-        <% } %>
-        <div class="menus">
-            <% for ( menu in theme.menus ) { %>
-                <%
-                    const menuInfo = theme.menus[menu];
-                    const [menuPath, _icon] = menuInfo.split("||").map(e => e?.trim());
-                %>
-                <div class="header-menu-item" data-path="<%- menuPath; %>">
-                    <a href="<%- url_for(menuPath); %>"><%- menu; %></a>
-                </div>
-            <% } %>
-        </div>
-    </div>
 </div>
+<script>
+  // 根据宽度变化，切换样式
+  function modifyClassWhenWidthChange() {
+    const headerComp = document.querySelector('#header-content');
+    const clsList = headerComp?.classList;
+    if (window.innerWidth < 1000) {
+      clsList?.add('header-content-mobile');
+      clsList?.remove('header-content-pc');
+    } else {
+      clsList?.add('header-content-pc');
+      clsList?.remove('header-content-mobile');
+    }
+  }
 
+  // 根据当前路径，设置menu item高亮
+  function activeMenuItem() {
+    const currPath = window.location.pathname;
+    // 注意和 "css/menus.css" 里面class保持一致
+    const menuItems = document.querySelectorAll(".menus .header-menu-item");
+    for (let menuItem of menuItems) {
+      // 每一个 .menu-item 元素，在生成DOM的时候，
+      // 都会在其元素属性添加 "data-path"="xxx" 自定义数据属性，记录其路径
+      const pathRecord = menuItem.dataset["path"];
+      if (currPath === pathRecord) {
+        menuItem.classList.add("active");
+      } else {
+        menuItem.classList.remove("active");
+      }
+    }
+  }
+
+  // 注册事件
+  window.onpopstate = () => activeMenuItem();
+  window.onresize = () => modifyClassWhenWidthChange();
+  activeMenuItem();
+  modifyClassWhenWidthChange();
+</script>

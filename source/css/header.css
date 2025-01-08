@@ -1,11 +1,8 @@
-.header-content {
-    @media only screen and (max-height: 999px) {
+#header-content {
+    &.header-content-mobile {
         width: 100%;
-        .desktop-style {
-            display: none;
-        }
 
-        .mobile-style {
+        .content-wrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -27,36 +24,41 @@
                 }
             }
 
-            .social {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-bottom: 8px;
+            .extend-info {
 
-                .header-social-item {
-                    color: var(--social-item-color-mobile);
+                .social {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 8px;
+
+                    .header-social-item {
+                        color: var(--social-item-color-mobile);
+                    }
                 }
-            }
 
-            .menus {
-                display: flex;
-                justify-content: center;
-                align-items: baseline;
-                margin-bottom: 8px;
+                .menus {
+                    display: flex;
+                    justify-content: center;
+                    align-items: baseline;
+                    margin-bottom: 8px;
 
-                .header-menu-item {
-                    color: var(--menu-item-color-mobile);
+                    .header-menu-item {
+                        color: var(--menu-item-color-mobile);
 
-                    &.active {
-                        color: var(--menu-item-color-mobile-active);
+                        &.active {
+                            color: var(--menu-item-color-mobile-active);
+                        }
                     }
                 }
             }
         }
     }
-    @media only screen and (min-width: 1000px) {
+
+    &.header-content-pc {
         width: 700px;
-        .desktop-style {
+
+        .content-wrapper {
             display: flex;
             padding: 10px;
             justify-content: space-between;
@@ -66,7 +68,7 @@
                 display: block;
             }
 
-            .right {
+            .extend-info {
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-end;
@@ -99,12 +101,11 @@
 
             }
         }
-
-        .mobile-style {
-            display: none;
-        }
     }
+}
 
+/* basic component style */
+#header-content {
     .header-brand-title {
         font-size: 24px;
         color: var(--brand-color)
@@ -124,7 +125,6 @@
         }
     }
 
-
     .header-menu-item {
         font-size: 14px;
 
@@ -136,5 +136,4 @@
             text-decoration: underline;
         }
     }
-
 }
