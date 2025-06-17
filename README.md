@@ -1,10 +1,10 @@
 # hexo-theme-brief
 
-一款适用于 Hexo v7.3+ 版本的简洁主题。你可以在这里预览：[https://brief-example.zhen.blog](https://brief-example.zhen.blog)（对应项目仓库：[https://github.com/w4ngzhen/brief-theme-example](https://github.com/w4ngzhen/brief-theme-example)）
+一款适用于 Hexo v7.3+ 版本的简洁主题。你可以在这里预览：[https://brief-theme-example.project.zhen.wang](https://brief-theme-example.project.zhen.wang)（对应项目仓库：[https://github.com/w4ngzhen/brief-theme-example](https://github.com/w4ngzhen/brief-theme-example)）
 
 ## 起源
 
-这款主题纯粹是为了我的个人博客而编写的：[https://zhen.blog](https://zhen.blog)。为了简洁，我抛弃了很多的模块（~~懒~~
+这款主题纯粹是为了我的个人博客而编写的：[https://zhen.wang](https://zhen.wang)。为了简洁，我抛弃了很多的模块（~~懒~~
 ），因此本主题现在不会有，将来也不会有：
 
 - ~~评论模块~~
