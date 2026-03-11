@@ -63,37 +63,7 @@ Hexo项目目录/
 
 #### npm方式
 
-> ⚠️注意：虽然npm包安装方式比较方便，但是hexo-theme-brief还在激情开发优化中，因此如果要硬要使用npm包，强烈建议锁定到对于你来说合适的版本
-
-使用npm包形式，只需要在Hexo项目根目录下，使用包管理器安装`hexo-theme-brief@latest`：
-
-```bash
-npm install hexo-theme-brief@latest
-# yarn add hexo-theme-brief@latest
-# pnpm add hexo-theme-brief@latest
-```
-
-安装完成后，确保Hexo项目下package.json依赖中存在：
-
-```json5
-{
-  "dependencies": {
-    "hexo": "^7.3.0",
-    "hexo-generator-archive": "^2.0.0",
-    "hexo-generator-category": "^2.0.0",
-    "hexo-generator-feed": "^3.0.0",
-    "hexo-generator-index": "^4.0.0",
-    "hexo-generator-searchdb": "^1.4.1",
-    "hexo-generator-tag": "^2.0.0",
-    "hexo-renderer-ejs": "^2.0.0",
-    "hexo-renderer-markdown-it-plus": "^1.0.6",
-    "hexo-renderer-stylus": "^3.0.1",
-    "hexo-server": "^3.0.0",
-    "hexo-theme-brief": "指定版本"
-    // <--- 指定版本
-  }
-}
-```
+现不支持npm包方式
 
 ## 配置
 
